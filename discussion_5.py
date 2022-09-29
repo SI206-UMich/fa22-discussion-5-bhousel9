@@ -38,14 +38,28 @@ class Warehouse:
 
 	# Adds an item to the warehouse	
 	def add_item(self, item):
+		# for item in ...
+		#save value to class Warehouse
+		self.item = item
+		
 		pass
 
 	# Returns the item in the warehouse with the most stock		
 	def get_max_stock(self):
+		#really unsure here 
+		for item in Warehouse:
+			if item.stock > item.stock - 1:
+				max_item = item
+		return max_item
 		pass
 	
 	# Returns the item in the warehouse with the highest price
 	def get_max_price(self):
+		for item in Warehouse:
+			if item.price > item.price - 1:
+				max_item = item
+		return max_item
+		
 		pass	
 
 
@@ -63,21 +77,41 @@ class TestAllMethods(unittest.TestCase):
 
 	## Check to see whether count_a works
 	def test_count_a(self):
+		self.assertEqual(count_a("I like bananas"), 3, "Tested count_a on input 'I like bananas'")
+		self.assertEqual(count_a("I like dogs"), 0, "Tested count_a on input 'I like dogs'")
+		self.assertEqual(count_a(" "), 0, "Tested count_a on input ' '")
+		self.assertEqual(count_a("A dog ate apples"), 3, "Tested count_a on input 'A dog at apples'")
+		self.assertEqual(count_a("I like banana"), 3, "Tested count_a on input 'I like bananas'")
+	 #wondering if the 'i' in the for statement is counting words with 'a' in them, not 'a's in each word
 		pass
 
 
 	## Check to see whether you can add an item to the warehouse
 	def test_add_item(self):
-		pass
+		self.assertEqual(add_item(self, "thing"), "thing", "Tested add_item on input 'thing'")
+		self.assertEqual(print_items(self, "thing"), "thing", "Tested add_item on input 'thing'")
 
+		variable = self.item1
+		
+		pass
+		#confused on best way to test this. should I use old school way of print testing or unittest?
 
 	## Check to see whether warehouse correctly returns the item with the most stock
 	def test_warehouse_max_stocks(self):
+		#i'm so confused, i thought we were just testing here...i can't seem to find anything written for warehouse_max_stocks
+		print(f"Testing warehouse_max_stocks([????]) should return ??? and returns {warehouse_max_stocks([???])}")
+		self.assertEqual(warehouse_max_stock(5), stock, "Tested warehouse_max_price on input 'price'")
+
+		#i don't fully understand what sort of unittest I need to do...need to go back and re read unittests
 		pass
 
 
 	# Check to see whether the warehouse correctly return the item with the highest price
 	def test_warehouse_max_price(self):
+		self.assertEqual(warehouse_max_price(5), price, "Tested warehouse_max_price on input 'price'")
+		#still having trouble fully understanding what i'm testing
+
+
 		pass
 		
 
