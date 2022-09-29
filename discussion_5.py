@@ -22,7 +22,7 @@ class Item:
 	def __str__(self):
 		return ("Item = {}, Price = {}, Stock = {}".format(self.name, self.price, self.stock))
 
-# Warehouse class
+# Warehouse class  
 # A warehouse stores items and manages them accordingly.
 class Warehouse:
 
