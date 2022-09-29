@@ -19,7 +19,7 @@ class Item:
 		self.stock = stock
  
 	# Print
-	def __str__(self):
+	def __str__(self):  
 		return ("Item = {}, Price = {}, Stock = {}".format(self.name, self.price, self.stock))
 
 # Warehouse class  
